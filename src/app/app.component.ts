@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tutorial';
+  title = 'Animali';
+  
+  balena:any;
+
+  eliminaCard(animal:string){
+    this.balena="app-component-balena";
+    if(animal==this.balena){
+      this.balena.style.display="none";
+    }
+  }
 }
