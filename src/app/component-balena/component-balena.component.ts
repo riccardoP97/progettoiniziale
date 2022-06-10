@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-component-balena',
@@ -6,9 +6,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./component-balena.component.css']
 })
 export class ComponentBalenaComponent implements OnInit {
-
-  @Output() balenaElimination = new EventEmitter<string>();
-
+  @Output() balenaDelete = new EventEmitter<string>();
+  @Input() researchedString="";
+  @Input() showTextBalena:any;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class ComponentBalenaComponent implements OnInit {
   balena:any;
 
   eliminaCardBalena(){
-    this.balenaElimination.emit();
+    this.balenaDelete.emit("");
   }
 
 }

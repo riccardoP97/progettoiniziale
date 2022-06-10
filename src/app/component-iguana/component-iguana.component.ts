@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-component-iguana',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-iguana.component.css']
 })
 export class ComponentIguanaComponent implements OnInit {
-
+  @Output() iguanaDelete = new EventEmitter<string>();
+  @Input() researchedString="";
+  showIText=false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  eliminaCardIguana(){
+    this.iguanaDelete.emit("");
   }
 
 }

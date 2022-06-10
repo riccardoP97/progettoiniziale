@@ -1,16 +1,15 @@
+<div class="card" style="width: 18rem;">
+  <img src="https://www.passione-animali.it/p4-data/uploads/2016/10/536613_www.Gde-Fon.com_.jpg" class="card-img-top"
+    alt="Tigre">
+  <div class="card-body">
+    <h5 class="card-title">Tigre</h5>
+    <p class="card-text">La tigre è un animale appartente alla classe dei mammiferi e della famiglia dei
+      felidi.<br>Clicca sul bottone per saperne di più.</p>
+    <a href="https://it.wikipedia.org/wiki/Panthera_tigris#:~:text=La%20tigre%20(Panthera%20tigris%20Linnaeus,leopardo%20e%20leopardo%20delle%20nevi)."
+      class="btn btn-primary" target="_blank">Vai alla pagina Wikipedia</a>
+    <button (click)="eliminaCardTigre()" type="button" class="btn btn-secondary">Elimina la card</button>
+  </div>
 
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src="https://www.passione-animali.it/p4-data/uploads/2016/10/536613_www.Gde-Fon.com_.jpg"
-          class="card-img-top" alt="Tigre">
-        <div class="card-body">
-          <h5 class="card-title">Tigre</h5>
-          <p class="card-text">La tigre è un animale appartente alla classe dei mammiferi e della famiglia dei
-            felidi.<br>Clicca sul bottone per saperne di più.</p>
-          <a href="https://it.wikipedia.org/wiki/Panthera_tigris#:~:text=La%20tigre%20(Panthera%20tigris%20Linnaeus,leopardo%20e%20leopardo%20delle%20nevi)."
-            class="btn btn-primary" target="_blank">Vai alla pagina Wikipedia</a>
-            <button (click)="" type="button" class="btn btn-secondary">Elimina la card</button>
-        </div>
-      </div>
-
-  
+  <div *ngIf="showTText">
+    <p>Testo Cercato {{researchedString}}</p>
+  </div>

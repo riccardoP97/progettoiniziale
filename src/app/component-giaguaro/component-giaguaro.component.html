@@ -1,5 +1,4 @@
-<div class="col">
-  <div class="card" style="width: 18rem;">
+<div class="card " style="width: 18rem;">
     <img src="https://www.amoreaquattrozampe.it/wp-content/uploads/2020/05/giaguaro-2.jpg" alt="Giaguaro">
     <div class="card-body">
       <h5 class="card-title">Giaguaro</h5>
@@ -7,6 +6,9 @@
         felidi.<br>Clicca sul bottone per saperne di più.</p>
       <a href="https://it.wikipedia.org/wiki/Panthera_onca" class="btn btn-primary" target="_blank">Vai alla pagina
         Wikipedia</a>
-        <button (click)="" type="button" class="btn btn-secondary">Elimina la card</button>
+        <button (click)="eliminaCardGiaguaro()" type="button" class="btn btn-secondary">Elimina la card</button>
     </div>
+    
+  <div *ngIf="showGText" >
+    <p>Testo Cercato {{researchedString}} </p>
   </div>

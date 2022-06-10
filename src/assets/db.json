@@ -1,0 +1,22 @@
+{
+  "utenti": [
+    {
+      "id": 0,
+      "nome": "Riccardo",
+      "cognome": "Pennino",
+      "eta": "25"
+    },
+    {
+      "id": 1,
+      "nome": "Monica",
+      "cognome": "Sebastiano",
+      "eta": "20"
+    },
+    {
+      "cognome": "Gatto",
+      "eta": "21",
+      "nome": "Francesco",
+      "id": 2
+    }
+  ]
+}
