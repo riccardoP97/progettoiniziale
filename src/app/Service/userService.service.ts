@@ -21,6 +21,10 @@ export class UserService {
         return this.http.delete<any>(this.baseUrl + '/' + id);
     }
 
+    editUtente(id:any, utente:any) {
+        return this.http.put<any>(this.baseUrl + '/' + id,utente)
+    }
+
     
 }
 

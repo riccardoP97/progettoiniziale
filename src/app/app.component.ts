@@ -15,7 +15,8 @@ export class AppComponent {
   showBalena = false;
   showGiaguaro = false;
   showError = false;
-
+  showModificaButton = false;
+  idDaModificare = 0;
   research: any = "";
   numberRepetitions:any=0;
   utenti:User[] = [];
@@ -169,10 +170,14 @@ inserisciUtente() {
       (response:any) => {
         this.utenti = response;
         console.log(this.utenti[0])
+        this.showModificaButton = false;
       }
     )
     }
   );
+  this.cognomeUtenteDaInserire = ''
+  this.etaUtenteDaInserire = ''
+  this.nomeUtenteDaInserire = ''
 }
 
 eliminaUtente(id: any) {
@@ -182,9 +187,39 @@ eliminaUtente(id: any) {
       (response:any) => {
         this.utenti = response;
         console.log(this.utenti[0])
+        this.showModificaButton = false;
       }
     )
   });
 }
 
+modificaUtente(utente:any) {
+  this.idDaModificare = utente.id;
+  this.cognomeUtenteDaInserire = utente.cognome
+  this.etaUtenteDaInserire = utente.eta
+  this.nomeUtenteDaInserire = utente.nome;
+  this.showModificaButton = true;
+}
+editUtente(id:any) {
+  
+  let utente: any = {
+    cognome: this.cognomeUtenteDaInserire,
+    eta: this.etaUtenteDaInserire,
+    nome: this.nomeUtenteDaInserire
+  };
+  this.userService.editUtente(id,utente).subscribe(()=>{
+
+    this.userService.getUtenti().subscribe(
+      (response:any) => {
+        this.utenti = response;
+        console.log(this.utenti[0])
+        this.showModificaButton = false;
+        // Andiamo a svuotare i campi per una miglio UE
+        this.cognomeUtenteDaInserire = ''
+        this.etaUtenteDaInserire = ''
+        this.nomeUtenteDaInserire = ''
+      }
+    )
+  });
+}
 }

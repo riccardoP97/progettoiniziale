@@ -3,7 +3,7 @@
 
 <div *ngFor="let utente of utenti">
   <div>
-    Nome: {{utente.nome}}, Cognome: {{utente.cognome}}, Età: {{utente.eta}} <button (click)="eliminaUtente(utente.id)">Elimina Utente</button>
+    Nome: {{utente.nome}}, Cognome: {{utente.cognome}}, Età: {{utente.eta}} <button (click)="eliminaUtente(utente.id)">Elimina Utente</button>  <button (click)="modificaUtente(utente)">Modifica Utente</button>
   </div>
 </div>
 
@@ -14,6 +14,7 @@
 <label for="">Inserisci eta</label>
 <input [(ngModel)]="etaUtenteDaInserire" type="text">
 <button  (click)="inserisciUtente()">Inserisci utente</button>
+<button *ngIf="showModificaButton" (click)="editUtente(idDaModificare)">Modifica utente</button>
 
 
 
